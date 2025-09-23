@@ -1,0 +1,159 @@
+/* Reset default margins and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* Root container */
+#root {
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Header */
+#header {
+  width: 100%;
+  height: 90px;
+  padding: 0 20px;
+  background-color: #f9f9f9;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+/* Logo */
+#logo img {
+  height: 120px;
+  width: auto;
+}
+
+/* Social links */
+#social {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+#social .login-text {
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Navbar (desktop) */
+#navbar {
+  background-color: #1f2c3d;
+  padding: 10px;
+  position: relative;
+}
+
+#nav-menu {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+}
+
+#nav-menu li a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 5px 10px;
+  transition: color 0.3s;
+}
+
+#nav-menu li a:hover {
+  color: #2a9df4;
+}
+
+/* Hamburger */
+.nav-toggle {
+  display: none;
+  font-size: 32px;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+	
+	#social a {
+        display: none;
+    }
+	
+	#navbar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+	}
+
+	.nav-toggle {
+    display: block;
+    position: relative;
+    z-index: 1000;
+	}
+
+	#nav-menu {
+    display: none;
+    position: absolute;
+    top: 60px;       /* below header */
+    right: 10px;
+    flex-direction: column;
+    gap: 15px;
+    background: #1f2c3d;
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    z-index: 999;
+    width: 200px;
+	}
+
+	#nav-menu.show {
+    display: flex !important;
+	}
+}
+
+/* About Us */
+
+#about-main-heading {
+	text-align: center;
+	font-weight: bold;
+	font-size: 25px;
+	padding: 15px 15px 15px 15px; /*Top,Right,Bottom,Left*/
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columns */
+  gap: 15px;                             /* space between cells */
+  width: 80%;
+  margin: auto;
+  padding: 20px;
+}
+
+.grid-item {
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  padding: 30px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
+
+/* Responsive: stack items on smaller screens */
+@media (max-width: 600px) {
+  .grid-container {
+    grid-template-columns: 1fr; /* single column */
+  }
+}
