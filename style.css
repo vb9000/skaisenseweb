@@ -151,6 +151,15 @@ body {
   font-size: 16px;
 }
 
+.grid-item img {
+  width: 150px;       /* set consistent width */
+  height: 150px;      /* set consistent height */
+  object-fit: cover;  /* crop/fill without stretching */
+  border-radius: 10px; /* optional: rounded corners */
+  display: block;
+  margin: 0 auto 15px; /* center + add spacing below */
+}
+
 /* Responsive: stack items on smaller screens */
 @media (max-width: 600px) {
   .grid-container {
