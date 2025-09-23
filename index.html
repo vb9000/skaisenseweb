@@ -97,8 +97,16 @@ document.addEventListener('DOMContentLoaded', function () {
     const toggle = document.getElementById('nav-toggle');
     const menu = document.getElementById('nav-menu');
 
+    // Toggle menu when hamburger is clicked
     toggle.addEventListener('click', function () {
         menu.classList.toggle('show');
+    });
+
+    // Optional: close menu when a link is clicked (good for mobile)
+    document.querySelectorAll('#nav-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+            menu.classList.remove('show'); // hide menu
+        });
     });
 });
 </script>

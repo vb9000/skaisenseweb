@@ -105,25 +105,25 @@ body {
     z-index: 1000;
 	}
 
-	#nav-menu {
-    display: none;
-    position: absolute;
-    top: 60px;       /* below header */
-    right: 10px;
-    flex-direction: column;
-    gap: 15px;
-    background: #1f2c3d;
-    padding: 15px 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-    z-index: 999;
-    width: 200px;
-	}
+    #nav-menu {
+        display: none;
+        flex-direction: column;
+        gap: 15px;
+        background: #1f2c3d;
+        padding: 15px 20px;
+        border-radius: 8px;
+        position: absolute;
+        top: 60px;
+        right: 10px;
+        z-index: 999;
+        width: 200px;
+    }
 
-	#nav-menu.show {
-    display: flex !important;
-	}
+    #nav-menu.show {
+        display: flex !important;
+    }
 }
+
 footer {
   background-color: #0a0a23;
   color: #fff;
