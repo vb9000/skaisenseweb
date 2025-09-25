@@ -42,28 +42,39 @@
     </nav>
 <!-- *Common: NavBar: End* -->
 
-<!-- **About: Main: Start** -->
-	<!-- About: Main: Section-1 -->
+<!-- **solution: Main: Start** -->
+	<!-- solution: Main: Section-1 -->
     <section>
         <div>
-            <h2 id="about-section-1-title">About Us</h2>
+            <h2 id="about-section-1-title">Transforming Industries with AI Solutions</h2>
             <p class="about-section-text">
-                <span style="font-weight: bold;">Skaisense AI Labs Pvt Ltd </span> is a pioneering AI-focused company based in India, dedicated to empowering the next generation of talent and delivering cutting-edge AI solutions to businesses. Our mission is twofold: <span style="font-weight: bold;">skilling young minds in AI </span> and to <span style="font-weight: bold;">provide specialized AI staffing and project solutions </span> to organizations seeking innovative technology interventions. </p>
-			<p class="about-section-text">
-				Founded by visionary leaders with deep industry and technical expertise, Skaisense AI Labs combines world-class education with practical experience.</p>
+                At SKAISENSE, we build intelligent products and solutions that help businesses automate, scale, and innovate with confidence.</p>
 		</div>
 	</section>
 	
-	<!-- About: Main: Section-2-grid -->
+	<!-- solution: Main: Section-2-grid -->
 	<section>
 		<div class="about-section-2-grid-container">
-			<div class="about-section-2-grid-item">
-				<img src="img/dp.png" alt="Dharmendra Prasad">
-				<p>Dharmendra Prasad (CEO)</p>
+			
+			<!-- solution: Main: section-2: grid-1 -->
+			<section class="solution-hero-section">
+				<div class="solution-hero-content">
+				<h1 class="fade-in">AI Solutions Tailored for You</h1>
+				<p class="fade-in">Our team of researchers and engineers design scalable AI-driven applications to solve real-world challenges across education, business, and industry.</p>
 			</div>
-			<div class="about-section-2-grid-item">
-				<p>Dharmendra Prasad, Chief Executive Officer, is an IIT Delhi graduate with an MBA from XIMB and has extensive project management experience at Tata Steel.</p>
-			</div>
+			</section>
+			
+			<!-- solution: Main: section-2: grid-2 -->
+			
+			<section class="solution-main-grid-2-text">
+				<h3>Our Key AI Solutions Capabilities</h3>
+				<ul>
+					<li><strong>Automation & Efficiency</strong> – Unlock smarter operations with AI-driven workflows that save time, reduce manual effort, and boost productivity across your organization.</li>
+					<li><strong>Smart Insights</strong> – Turn your data into a strategic advantage with AI analytics that deliver actionable insights, enabling faster, smarter decisions.</li>
+					<li><strong>Personalization</strong> – Create tailored experiences with AI models that adapt to each student, customer, or professional, maximizing engagement and results.</li>
+				</ul>
+			</section>
+			
 			<div class="about-section-2-grid-item">
 				<img src="img/nk.png" alt="Neeraj Kumar">
 				<p>Neeraj Kumar (COO)</p>
@@ -142,6 +153,11 @@
 document.addEventListener('DOMContentLoaded', function () {
     const toggle = document.getElementById('nav-toggle');
     const menu = document.getElementById('nav-menu');
+	
+	window.addEventListener('DOMContentLoaded', () => {
+	const fadeEls = document.querySelectorAll('.fade-in');
+	fadeEls.forEach(el => el.classList.add('visible'));
+	});
 
     // Toggle menu when hamburger is clicked
     toggle.addEventListener('click', function () {

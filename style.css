@@ -3,10 +3,10 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-        }
+}
 
 body {
-	font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+	font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 	line-height: 1.6;
 	color: #333;
 	overflow-x: hidden;
@@ -116,11 +116,20 @@ body {
 	cursor: pointer;
 }
 
-/* Home: Hero Section Enhancement */
+/* Hero Section Enhancement */
 .hero-section {
 	background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 	color: white;
 	padding: 80px 0;
+	text-align: center;
+	position: relative;
+	overflow: hidden;
+}
+
+.solution-hero-section {
+	background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+	color: white;
+	padding: 0px 0;
 	text-align: center;
 	position: relative;
 	overflow: hidden;
@@ -137,12 +146,24 @@ body {
 	animation: float 20s ease-in-out infinite;
 }
 
+.solution-hero-section::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-image: url('img/solution-1.png'); /* path to your image */;
+	animation: float 20s ease-in-out infinite;
+}
+
 @keyframes float {
 	0%, 100% { transform: translateY(0px); }
 	50% { transform: translateY(-10px); }
 }
 
-.hero-content {
+.hero-content,
+.solution-hero-content {
 	position: relative;
 	z-index: 2;
 	max-width: 800px;
@@ -150,7 +171,8 @@ body {
 	padding: 0 20px;
 }
 
-.hero-section h1 {
+.hero-section h1,
+.solution-hero-section h1 {
 	font-size: 3.5rem;
 	font-weight: 800;
 	margin-bottom: 20px;
@@ -172,7 +194,8 @@ body {
 	}
 }
 
-.hero-section p {
+.hero-section p,
+.solution-hero-section p {
 	font-size: 1.4rem;
 	margin-bottom: 40px;
 	opacity: 0.9;
@@ -549,6 +572,23 @@ footer::before {
   margin: 0 auto 15px; /* center + add spacing below */
 }
 
+/* === solution === */
+
+.solution-main-grid-2-text ul {
+  list-style-type: disc; /* standard bullets */
+  padding-left: 20px;
+  line-height: 1.6;
+}
+
+.solution-main-grid-2-text li {
+  margin-bottom: 12px;
+  font-size: 1.1rem;
+}
+
+.solution-main-grid-2-text li strong {
+  color: #3b82f6; /* highlights the key term */
+}
+
 /* === Common Class === */
 
 .common-container-hcenter {
@@ -614,11 +654,13 @@ footer::before {
 		display: flex !important;
 	}
 
-	.hero-section h1 {
+	.hero-section h1,
+	.solution-hero-section h1{
 		font-size: 2.5rem;
 	}
 
-	.hero-section p {
+	.hero-section p,
+	.solution-hero-section p {
 		font-size: 1.2rem;
 	}
 
@@ -650,11 +692,13 @@ footer::before {
 }
 
 @media (max-width: 480px) {
-	.hero-section h1 {
+	.hero-section h1,
+	.solution-hero-section h1 {
 		font-size: 2rem;
 	}
 	
-	.section-title {
+	.section-title,
+	.solution-hero-section h1 {
 		font-size: 1.8rem;
 	}
 }
