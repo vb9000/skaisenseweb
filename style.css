@@ -522,23 +522,34 @@ footer::before {
 
 /* About Us */
 
-#about-main-heading {
+#about-section-1-title {
 	text-align: center;
 	font-weight: bold;
 	font-size: 25px;
 	padding: 15px 15px 15px 15px; /*Top,Right,Bottom,Left*/
 }
 
-.grid-container {
+#about-section-1-text {
+	font-size: 1rem;
+	line-height: 1.6; /*Sets spacing between lines*/
+	color: #4b5563;
+	text-align: left;
+	max-width: 900px;
+	padding: 15px 15px 15px 15px; /*Top,Right,Bottom,Left*/
+	position: relative;
+	z-index: 2;
+}
+
+.about-section-2-grid-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* 2 columns */
   gap: 15px;                             /* space between cells */
-  width: 80%;
+  width: 100%;
   margin: auto;
   padding: 20px;
 }
 
-.grid-item {
+.about-section-2-grid-item {
   background-color: #f0f0f0;
   border: 1px solid #ccc;
   padding: 30px;
@@ -547,7 +558,7 @@ footer::before {
   font-size: 16px;
 }
 
-.grid-item img {
+.about-section-2-grid-item img {
   width: 150px;       /* set consistent width */
   height: 150px;      /* set consistent height */
   object-fit: cover;  /* crop/fill without stretching */
@@ -650,7 +661,8 @@ footer::before {
 	#root {
 		padding: 0 20px;
 	}
-	.mission-content {
+	.mission-content, 
+	.about-section-2-grid-container {
     grid-template-columns: 1fr; /* 1 column */
 	}
 }
