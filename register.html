@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Request for Information</title>
+<title>AI Skilling Registration</title>
 <style>
   body {
     font-family: Arial, sans-serif;
@@ -58,7 +58,7 @@
   <!-- Top-right Close Button -->
   <a href="index.html" class="close-btn">&times;</a>
 
-  <h2>Request for Information</h2>
+  <h2>AI Skilling Registration</h2>
 
   <label for="name">Full Name:</label>
   <input type="text" id="name" name="name" placeholder="Your Name" required>
@@ -66,8 +66,14 @@
   <label for="email">Email:</label>
   <input type="email" id="email" name="email" placeholder="you@example.com" required>
 
-  <label for="question">Information requested:</label>
-  <input type="email" id="email" name="email" placeholder="Pleaes mention the information requested" required>
+  <label for="program">Select Program:</label>
+  <select id="program" name="program" required>
+    <option value="">-- Choose a Module --</option>
+    <option value="foundation">AI Foundations for Young Innovators (Grades 7-9)</option>
+    <option value="essentials">AI & ML Essentials (Grades 8-9)</option>
+    <option value="intermediate">Intermediate AI & Data Science (B.Tech 1-2, Early Professionals)</option>
+    <option value="advanced">Advanced AI & ML Professional (B.Tech 3-4, Professionals)</option>
+  </select>
 
   <button type="button" class="submit-btn" onclick="submitMailto()">Submit</button>
 </form>
@@ -76,7 +82,7 @@
 function submitMailto() {
   const name = encodeURIComponent(document.getElementById('name').value);
   const email = encodeURIComponent(document.getElementById('email').value);
-  const question = encodeURIComponent(document.getElementById('question').value);
+  const program = encodeURIComponent(document.getElementById('program').value);
 
   if(!name || !email || !program){
     alert("Please fill all fields before submitting.");
@@ -84,7 +90,7 @@ function submitMailto() {
   }
 
   const subject = encodeURIComponent("AI Skilling Registration");
-  const body = encodeURIComponent(`Full Name: ${name}\nEmail: ${email}\nQuestion: ${question}`);
+  const body = encodeURIComponent(`Full Name: ${name}\nEmail: ${email}\nSelected Program: ${program}`);
 
   window.location.href = `mailto:vb.9jan@gmail.com?subject=${subject}&body=${body}`;
 }
