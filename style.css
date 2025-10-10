@@ -80,23 +80,20 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0;
 
 /** Home: Section-1: Hero: Start **/
 
-.hero-section {	background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-	color: white; padding: 80px 0; text-align: center; position: relative; overflow: hidden; }
+.hero-section {background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+	color: white; padding: 80px 0; text-align: center; position: relative; overflow: hidden;}
 
 .hero-section::before {	content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
 	background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>'); animation: float 20s ease-in-out infinite; }
 
-.hero-content,
-.solution-hero-content { position: relative; z-index: 2;
+.hero-content {position: relative; z-index: 2;
 	max-width: 800px; margin: 0 auto; padding: 0 20px; }
 
-.hero-section h1,
-.solution-hero-section h1 {	font-size: 3.5rem; font-weight: 800; margin-bottom: 20px;
+.hero-section h1 {font-size: 3.5rem; font-weight: 800; margin-bottom: 20px;
 	background: linear-gradient(45deg, #ffffff, #e0e7ff); -webkit-background-clip: text;
 	-webkit-text-fill-color: transparent; background-clip: text; animation: slideInDown 1s ease-out;}
 	
-.hero-section p,
-.solution-hero-section p { font-size: 1.4rem; margin-bottom: 40px;
+.hero-section p {font-size: 1.4rem; margin-bottom: 40px;
 	opacity: 0.9; animation: fadeInUp 1s ease-out 0.3s both; }
 	
 /* Home: Section-1: Hero: End */	
@@ -156,54 +153,45 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0;
 
 /* Home: Section-1: Hero: End */
 
-/** Learn: Section-1: Hero: Start **/
-.learn-sec1-section {display: flex; align-items: center; position: relative; overflow: hidden; padding-top: 15px;
-	background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(247,250,252,0.9) 100%); }
-	 
-.learn-sec1-content { display: grid; grid-template-columns: 1fr 1fr; column-gap: 2rem;
-	row-gap: 2rem; align-items: center; position: relative; z-index: 2; }
-	
+/** Learn: Start **/
 .learn-sec-text h2{ font-size: 30px; font-weight: 600; color: black;line-height: 1.2;
 	margin-bottom: 1rem; padding-top: 1rem;}
-           
+.learn-sec-button { padding:10px 20px; margin-right:0; background-color:#006680; color:white; 
+	border:none; border-radius:8px; cursor:pointer; font-weight:600; font-size:15px; }
+.learn-sec1-section {display: flex; align-items: center; position: relative; overflow: hidden; padding-top: 15px;
+	background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(247,250,252,0.9) 100%); }
+.learn-sec1-content { display: grid; grid-template-columns: 1fr 1fr; column-gap: 2rem;
+	row-gap: 2rem; align-items: center; position: relative; z-index: 2; }
 .learn-sec1-text p { font-size: 1rem; color: #4a5568; margin-bottom: 1rem; opacity: 0.9; }
-              
 .learn-sec1-visual {position: relative; display: flex; justify-content: center; align-items: center;}
-
 .learn-sec1-grid-container { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; padding: 20px; }
-
 .learn-sec1-grid-item { background-color: #fff; border: 2px solid #00b4ff; border-radius: 12px;
 	box-shadow: 0 0 12px rgba(0,180,255,0.4); padding: 20px; text-align: center; font-family: Arial, sans-serif; }
-	
 .learn-sec1-grid-item h3 {font-size: 18px; font-weight: 600; }
-
 .learn-sec1-grid-item p {font-size: 14px; font-weight: 400; } 
-
-        
 .learn-sec1-ai-nodes {width: 300px; height: 300px; position: relative;
 	animation: rotate 30s linear infinite;}
-        
-@keyframes rotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); } }
-        
 .learn-sec1-node {position: absolute; width: 60px; height: 60px;
 	background: linear-gradient(45deg, #4f46e5, #7c3aed); border-radius: 50%; display: flex;
 	align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 14px;
 	box-shadow: 0 10px 30px rgba(79,70,229,0.3); animation: pulse 2s ease-in-out infinite alternate;}
-        
-@keyframes pulse {
-            from { transform: scale(1); }
-            to { transform: scale(1.1); }}
-        
 .learn-sec1-node:nth-child(1) { top: 0; left: 50%; transform: translateX(-50%); }
 .learn-sec1-node:nth-child(2) { top: 25%; right: 0; }
 .learn-sec1-node:nth-child(3) { bottom: 25%; right: 0; }
 .learn-sec1-node:nth-child(4) { bottom: 0; left: 50%; transform: translateX(-50%); }
 .learn-sec1-node:nth-child(5) { bottom: 25%; left: 0; }
 .learn-sec1-node:nth-child(6) { top: 25%; left: 0; }
-
 .learn-sec2-grid-container { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; 
+	padding: 20px 20px 20px 20px; }
+@keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); } }
+@keyframes pulse {
+            from { transform: scale(1); }
+            to { transform: scale(1.1); }}
+
+/** Talent: Start **/
+.talent-sec1-grid-container { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; 
 	padding: 20px 20px 20px 20px; }
 
 /* Mobile Responsive */
@@ -221,16 +209,11 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0;
 
 	#nav-menu.show { display: flex !important; }
 
-	.hero-section h1,
-	.solution-hero-section h1{ font-size: 2.5rem; }
-
-	.hero-section p,
-	.solution-hero-section p { font-size: 1.2rem; }
+	.hero-section h1 {font-size: 2.5rem;}
+	.hero-section p {font-size: 1.2rem;}
 
 	.section-title { font-size: 2rem; }
-
 	.service-card { margin: 20px 0; padding: 30px 20px; }
-
 	.features-grid { grid-template-columns: 1fr; gap: 20px; }
 
 	.footer-container { flex-direction: column; }
@@ -252,9 +235,11 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0;
 
 	.home-sec-frame-r1c1 ul { padding-left: 20px; padding-right: 20px; text-align: left; }
 
-	.home-sec-button { margin: 10px 0 0 0; width: 50%; height: auto; font-size: 15px; padding: 5px; }
+	.home-sec-button, .learn-sec-button
+	{margin: 10px 0 0 0; width: 50%; height: auto; font-size: 15px; padding: 5px; }
 	
-	.home-sec3-grid-container, .learn-sec1-grid-container, .learn-sec2-grid-container 
+	.home-sec3-grid-container, .learn-sec1-grid-container, 
+	.learn-sec2-grid-container, .talent-sec1-grid-container
 	{ grid-template-columns: 1fr; gap: 10px; padding: 10px; }
 	
 	.learn-sec1-visual {display:none}
