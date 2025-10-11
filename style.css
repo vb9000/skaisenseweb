@@ -236,7 +236,7 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0;
 	.home-sec-frame-r1c1 ul { padding-left: 20px; padding-right: 20px; text-align: left; }
 
 	.home-sec-button, .learn-sec-button
-	{margin: 10px 0 0 0; width: 50%; height: auto; font-size: 15px; padding: 5px; }
+	{ margin: 10px 0 0 0; width: 100%; height: auto; font-size: 15px; padding: 10px; }
 	
 	.home-sec3-grid-container, .learn-sec1-grid-container, 
 	.learn-sec2-grid-container, .talent-sec1-grid-container
