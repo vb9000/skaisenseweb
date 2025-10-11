@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Products | AI Products</title>
+	<link rel="stylesheet" href="style.css">
+	<style>
+	/* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 120px 20px 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></svg>');
+            animation: float 20s linear infinite;
+        }
+        
+        @keyframes float {
+            from { transform: translateY(0); }
+            to { transform: translateY(-100px); }
+        }
+        
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            opacity: 0.95;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Featured Product Section */
+        .featured-product {
+            padding: 100px 20px;
+            background: white;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .featured-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .featured-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            border-radius: 20px;
+            padding: 60px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+        
+        .featured-text h2 {
+            font-size: 2.5rem;
+            color: #1e3a8a;
+            margin-bottom: 15px;
+        }
+        
+        .featured-text .tagline {
+            font-size: 1.3rem;
+            color: #3b82f6;
+            margin-bottom: 25px;
+            font-weight: 500;
+        }
+        
+        .featured-text p {
+            color: #475569;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            font-size: 1.05rem;
+        }
+        
+        .highlight-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .highlight-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+        
+        .highlight-icon {
+            min-width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+        
+        .highlight-text {
+            flex: 1;
+        }
+        
+        .highlight-text h4 {
+            font-size: 1rem;
+            color: #1e3a8a;
+            margin-bottom: 5px;
+        }
+        
+        .highlight-text p {
+            font-size: 0.9rem;
+            color: #64748b;
+            margin: 0;
+        }
+        
+        .btn {
+            padding: 15px 35px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: 600;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(30, 58, 138, 0.3);
+        }
+        
+        .featured-visual {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+        
+        .visual-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .visual-header h3 {
+            font-size: 1.3rem;
+            color: #1e3a8a;
+            margin-bottom: 10px;
+        }
+        
+        .visual-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        
+        .visual-box {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            border: 2px solid #bfdbfe;
+        }
+        
+        .visual-box .icon {
+            font-size: 2rem;
+            margin-bottom: 8px;
+        }
+        
+        .visual-box .label {
+            font-size: 0.85rem;
+            color: #1e3a8a;
+            font-weight: 600;
+        }
+        
+        /* Other Products Section */
+        .other-products {
+            padding: 100px 20px;
+            background: #f8fafc;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: #2d3748;
+            margin-bottom: 15px;
+        }
+        
+        .section-header p {
+            font-size: 1.2rem;
+            color: #64748b;
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+        
+        .product-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+        
+        .product-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+        
+        .product-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+        
+        .product-header h3 {
+            font-size: 1.6rem;
+            margin-bottom: 10px;
+        }
+        
+        .product-tagline {
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+        
+        .product-body {
+            padding: 30px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .product-description {
+            color: #475569;
+            line-height: 1.8;
+            margin-bottom: 25px;
+            flex: 1;
+        }
+        
+        .product-features {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+        
+        .product-features li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+            color: #475569;
+            font-size: 0.95rem;
+        }
+        
+        .product-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .product-status {
+            display: inline-block;
+            padding: 6px 15px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        
+        .status-coming-soon {
+            background: #fef3c7;
+            color: #92400e;
+        }
+        
+        .status-beta {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+        
+        .product-footer {
+            padding: 0 30px 30px;
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: #667eea;
+            border: 2px solid #667eea;
+            width: 100%;
+            text-align: center;
+        }
+        
+        .btn-secondary:hover {
+            background: #667eea;
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 100px 20px;
+            background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+            color: white;
+            text-align: center;
+        }
+        
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+        .sba-carousel {
+            padding: 80px 20px;
+            background: white;
+            border-top: 1px solid #e5e7eb;
+        }
+        
+        .carousel-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .carousel-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+        
+.carousel-image {
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+        
+.carousel-image img {
+    width: 100% !important;
+    height: auto !important;
+    max-height: 400px;
+    object-fit: contain;
+    border-radius: 10px;
+    transition: opacity 0.5s ease;
+    display: block !important;
+    opacity: 1 !important;
+}
+        
+        .carousel-image img.active {
+            opacity: 1;
+            position: relative;
+        }
+        
+        .carousel-text h3 {
+            font-size: 2rem;
+            color: #1e3a8a;
+            margin-bottom: 20px;
+        }
+        
+        .carousel-text p {
+            color: #475569;
+            line-height: 1.8;
+            margin-bottom: 25px;
+            font-size: 1.05rem;
+        }
+        
+        .carousel-text ul {
+            list-style: none;
+        }
+        
+        .carousel-text ul li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+            color: #475569;
+        }
+        
+        .carousel-text ul li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #3b82f6;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .carousel-indicators {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+        }
+        
+        .indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #cbd5e1;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .indicator.active {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            width: 35px;
+            border-radius: 6px;
+        }
+        
+        .indicator:hover {
+            background: #94a3b8;
+        }
+		
+        @media (max-width: 968px) {
+            .featured-content {
+                grid-template-columns: 1fr;
+                padding: 40px;
+            }
+            
+            .highlight-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .featured-text h2 {
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+		.carousel-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .carousel-image {
+                min-height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div id="root">
+
+<!-- **Common: Header: Start** -->
+    <header id="header">
+        <div class="header-container">
+            <div id="logo">
+                <img src="img/logo2-full.svg" alt="Company Logo">
+            </div>
+            <div id="login">
+                <span class="login-text">Log In</span>
+            </div>
+        </div>
+    </header>
+<!-- *Common: Header: End* -->
+
+<!-- **Common: NavBar: Start** -->
+
+    <nav id="navbar">
+        <div class="nav-toggle" id="nav-toggle">&#9776;</div>
+        <ul id="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="learning.html">AI Skilling</a></li>
+			<li><a href="talent.html">AI Talent</a></li>
+            <li><a href="solution.html">AI Solutions</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </nav>
+	
+<!-- *Common: NavBar: End* -->
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Our AI Product Portfolio</h1>
+            <p>Intelligent solutions designed to transform how businesses operate, make decisions, and serve their customers</p>
+        </div>
+    </section>
+
+    <!-- Featured Product -->
+    <section class="featured-product">
+        <div class="container">
+            <div class="featured-badge">⭐ Featured Product</div>
+            <div class="featured-content">
+                <div class="featured-text">
+                    <h2>Skaisense Banking Analytics</h2>
+                    <p class="tagline">Transform Retail Banking with AI-Powered Intelligence</p>
+                    <p>SBA delivers comprehensive analytics across all critical business areas of retail banking, enabling data-driven decisions that improve efficiency, reduce risk, and enhance customer experience through advanced ML, DL, and LLM technologies.</p>
+                    
+                    <div class="highlight-grid">
+                        <div class="highlight-item">
+                            <div class="highlight-icon">🎯</div>
+                            <div class="highlight-text">
+                                <h4>360° Business View</h4>
+                                <p>Unified analytics across all banking operations</p>
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <div class="highlight-icon">🧠</div>
+                            <div class="highlight-text">
+                                <h4>AI-Driven Insights</h4>
+                                <p>Predictive analytics and natural language queries</p>
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <div class="highlight-icon">⚡</div>
+                            <div class="highlight-text">
+                                <h4>Real-Time Monitoring</h4>
+                                <p>Live dashboards and instant alerting</p>
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <div class="highlight-icon">🔒</div>
+                            <div class="highlight-text">
+                                <h4>Risk & Compliance</h4>
+                                <p>Automated fraud detection and regulatory tracking</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="#" class="btn btn-primary">Explore Skaisense Banking Analytics →</a>
+                </div>
+                
+                <div class="featured-visual">
+                    <div class="visual-header">
+                        <h3>Six Critical Business Areas</h3>
+                    </div>
+                    <div class="visual-grid">
+                        <div class="visual-box">
+                            <div class="icon">👥</div>
+                            <div class="label">Customer Analytics</div>
+                        </div>
+                        <div class="visual-box">
+                            <div class="icon">🔒</div>
+                            <div class="label">Risk & Compliance</div>
+                        </div>
+                        <div class="visual-box">
+                            <div class="icon">💳</div>
+                            <div class="label">Product Performance</div>
+                        </div>
+                        <div class="visual-box">
+                            <div class="icon">⚙️</div>
+                            <div class="label">Operations & Efficiency</div>
+                        </div>
+                        <div class="visual-box">
+                            <div class="icon">💰</div>
+                            <div class="label">Financial Performance</div>
+                        </div>
+                        <div class="visual-box">
+                            <div class="icon">📱</div>
+                            <div class="label">Digital Banking</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+	
+<!--VB Start-->
+<!-- SBA Screenshots Carousel -->
+    <section class="sba-carousel">
+        <div class="container">
+            <div class="carousel-container">
+                <div class="carousel-content">	
+				
+	
+                    <div class="carousel-image">
+                        <img id="carousel-img" src="img-0/sba-dashboard.png" alt="SBA Dashboard" style="width: 100%; max-width: 100%; height: auto; display: block; opacity: 1;">
+                    </div>
+					
+					
+                    <div class="carousel-text">
+                        <h3 id="carousel-title">Comprehensive Dashboard View</h3>
+                        <p id="carousel-description">Get a complete overview of your banking operations with customizable dashboards that surface the metrics that matter most. Real-time data visualization powered by AI helps you spot trends and anomalies instantly.</p>
+                        <ul id="carousel-features">
+                            <li>Real-time data updates across all business units</li>
+                            <li>Customizable widgets and KPI tracking</li>
+                            <li>Drill-down capabilities for deep analysis</li>
+                            <li>Export and sharing functionality</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="carousel-indicators">
+                    <span class="indicator active" data-slide="0"></span>
+                    <span class="indicator" data-slide="1"></span>
+                    <span class="indicator" data-slide="2"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        
+    </script>
+
+<!--VB End-->	
+
+    <!-- Other Products -->
+    <section class="other-products">
+        <div class="container">
+            <div class="section-header">
+                <h2>More Products in Development</h2>
+                <p>Expanding our portfolio to serve diverse industries and use cases</p>
+            </div>
+            
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-header">
+                        <div class="product-icon">🏥</div>
+                        <h3>Healthcare Intelligence Suite</h3>
+                        <p class="product-tagline">AI-Powered Healthcare Analytics</p>
+                    </div>
+                    <div class="product-body">
+                        <span class="product-status status-coming-soon">Coming Soon</span>
+                        <p class="product-description">
+                            Comprehensive analytics platform for healthcare providers, combining patient care insights, operational efficiency, and predictive health outcomes using advanced machine learning.
+                        </p>
+                        <ul class="product-features">
+                            <li>Patient outcome prediction</li>
+                            <li>Resource optimization</li>
+                            <li>Clinical decision support</li>
+                            <li>Hospital operations analytics</li>
+                        </ul>
+                    </div>
+                    <div class="product-footer">
+                        <a href="#" class="btn btn-secondary">Learn More</a>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-header" style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);">
+                        <div class="product-icon">🛒</div>
+                        <h3>RetailSense AI</h3>
+                        <p class="product-tagline">Intelligent Retail Operations</p>
+                    </div>
+                    <div class="product-body">
+                        <span class="product-status status-beta">Beta Testing</span>
+                        <p class="product-description">
+                            End-to-end retail analytics solution covering inventory management, customer behavior, sales forecasting, and personalized marketing powered by deep learning.
+                        </p>
+                        <ul class="product-features">
+                            <li>Demand forecasting</li>
+                            <li>Dynamic pricing optimization</li>
+                            <li>Customer segmentation</li>
+                            <li>Supply chain analytics</li>
+                        </ul>
+                    </div>
+                    <div class="product-footer">
+                        <a href="#" class="btn btn-secondary">Join Beta Program</a>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-header" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
+                        <div class="product-icon">🏭</div>
+                        <h3>Manufacturing Optimizer</h3>
+                        <p class="product-tagline">Smart Factory Analytics</p>
+                    </div>
+                    <div class="product-body">
+                        <span class="product-status status-coming-soon">Coming Soon</span>
+                        <p class="product-description">
+                            AI-driven manufacturing intelligence platform for predictive maintenance, quality control, production optimization, and supply chain visibility.
+                        </p>
+                        <ul class="product-features">
+                            <li>Predictive maintenance</li>
+                            <li>Quality defect detection</li>
+                            <li>Production line optimization</li>
+                            <li>Energy consumption analytics</li>
+                        </ul>
+                    </div>
+                    <div class="product-footer">
+                        <a href="#" class="btn btn-secondary">Request Information</a>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-header" style="background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);">
+                        <div class="product-icon">📊</div>
+                        <h3>Marketing Intelligence Hub</h3>
+                        <p class="product-tagline">AI-Powered Marketing Analytics</p>
+                    </div>
+                    <div class="product-body">
+                        <span class="product-status status-coming-soon">Coming Soon</span>
+                        <p class="product-description">
+                            Comprehensive marketing analytics platform with campaign optimization, customer journey mapping, content performance, and ROI tracking using LLMs and ML.
+                        </p>
+                        <ul class="product-features">
+                            <li>Campaign performance analytics</li>
+                            <li>Content recommendation engine</li>
+                            <li>Customer journey optimization</li>
+                            <li>Attribution modeling</li>
+                        </ul>
+                    </div>
+                    <div class="product-footer">
+                        <a href="#" class="btn btn-secondary">Get Early Access</a>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-header" style="background: linear-gradient(135deg, #ec4899 0%, #db2777 100%);">
+                        <div class="product-icon">🎓</div>
+                        <h3>EduSense Platform</h3>
+                        <p class="product-tagline">Personalized Learning Analytics</p>
+                    </div>
+                    <div class="product-body">
+                        <span class="product-status status-coming-soon">Coming Soon</span>
+                        <p class="product-description">
+                            AI-powered educational analytics for personalized learning paths, student performance prediction, curriculum optimization, and institutional effectiveness.
+                        </p>
+                        <ul class="product-features">
+                            <li>Personalized learning paths</li>
+                            <li>Student success prediction</li>
+                            <li>Curriculum effectiveness analysis</li>
+                            <li>Engagement tracking</li>
+                        </ul>
+                    </div>
+                    <div class="product-footer">
+                        <a href="#" class="btn btn-secondary">Express Interest</a>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-header" style="background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);">
+                        <div class="product-icon">🚚</div>
+                        <h3>LogisticsIQ</h3>
+                        <p class="product-tagline">Smart Supply Chain Management</p>
+                    </div>
+                    <div class="product-body">
+                        <span class="product-status status-coming-soon">Coming Soon</span>
+                        <p class="product-description">
+                            Advanced logistics and supply chain analytics with route optimization, demand forecasting, warehouse management, and delivery performance insights.
+                        </p>
+                        <ul class="product-features">
+                            <li>Route optimization</li>
+                            <li>Delivery time prediction</li>
+                            <li>Warehouse efficiency</li>
+                            <li>Fleet management analytics</li>
+                        </ul>
+                    </div>
+                    <div class="product-footer">
+                        <a href="#" class="btn btn-secondary">Request Demo</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Have a Specific Use Case in Mind?</h2>
+            <p>We build custom AI solutions tailored to your unique business needs</p>
+            <div>
+                <a href="#" class="btn btn-primary">Discuss Your Project</a>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
+	
+<!-- **Common: Footer: Start** -->
+    <footer>
+        <div class="footer-container">
+			
+			<div class="footer-contact">
+                <h4>Skaisense AI Labs</h4>
+                <p><em>think smart.</em></p>
+                <p><em>build AI.</em></p>
+                <p><em>shape tomorrow.</em></p>
+                <p>
+					<span style="color:red; font-style: italic;">learn.</span>
+					<span style="color:yellow; font-style: italic;">build.</span>
+					<span style="color:#51cf66; font-style: italic;">lead.</span>
+				</p>
+            </div>
+
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+				<p><a href="index.html">Home</a> &nbsp; <a href="about.html">About</a></p>
+				<p><a href="learning.html">AI Skilling</a></p>
+				<p><a href="talent.html">AI Talent</a></p>
+				<p><a href="solution.html">AI Solutions</a></p>
+            </div>
+
+            <div class="footer-contact">
+                <h4>Stay Connected</h4>
+                <p><a href="#">Facebook</a></p>
+                <p><a href="#">Twitter</a></p>
+                <p><a href="#">Instagram</a></p>
+                <p><a href="#">Youtube</a></p>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact Us</h4>
+                <p>2/21, Sonari West Layout</p>
+                <p>Jamshedpur-831011</p>
+                <p>Email: info@skaisense.com</p>
+                <p>Phone: +91-1234567891</p>
+            </div>
+        </div>
+    </footer>
+
+	<div class="footer-bottom" style="font-weight: normal;">
+		<p>© 2025 Skaisense AI Labs Pvt Ltd. All rights reserved.</p>
+	</div>
+	
+<!-- *Common: Footer: End* -->
+
+</div>
+
+<!-- JavaScript -->
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const toggle = document.getElementById('nav-toggle');
+    const menu = document.getElementById('nav-menu');
+
+    // Toggle menu when hamburger is clicked
+    toggle.addEventListener('click', function () {
+        menu.classList.toggle('show');
+    });
+
+    // Optional: close menu when a link is clicked (good for mobile)
+    document.querySelectorAll('#nav-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+            menu.classList.remove('show'); // hide menu
+        });
+    });
+});
+
+const carouselData = [
+            {
+                image: 'img-0/sba-dashboard.png',
+                title: 'Comprehensive Dashboard View',
+                description: 'Get a complete overview of your banking operations with customizable dashboards that surface the metrics that matter most. Real-time data visualization powered by AI helps you spot trends and anomalies instantly.',
+                features: [
+                    'Real-time data updates across all business units',
+                    'Customizable widgets and KPI tracking',
+                    'Drill-down capabilities for deep analysis',
+                    'Export and sharing functionality'
+                ]
+            },
+            {
+                image: 'img-0/sba-intrate.png',
+                title: 'AI-Powered Predictive Analytics',
+                description: 'Leverage machine learning models to forecast customer behavior, predict credit risk, and identify opportunities before they become obvious. Our LLM-powered insights explain predictions in plain language.',
+                features: [
+                    'Customer churn prediction with 95% accuracy',
+                    'Credit risk assessment using deep learning',
+                    'Natural language query interface',
+                    'Automated insight generation and alerts'
+                ]
+            },
+            {
+                image: 'img-0/sba-risk.png',
+                title: 'Risk & Compliance Monitoring',
+                description: 'Stay ahead of regulatory requirements with automated compliance tracking and real-time fraud detection. Our AI continuously monitors transactions and flags suspicious activities instantly.',
+                features: [
+                    'Real-time fraud detection and prevention',
+                    'Automated AML transaction monitoring',
+                    'Regulatory compliance dashboards',
+                    'Risk scoring and portfolio analysis'
+                ]
+            }
+        ];
+        
+        let currentSlide = 0;
+        let autoPlayInterval;
+        
+			 function updateCarousel(index) {
+    const data = carouselData[index];
+    
+    // Update image with fade effect
+    const imgElement = document.getElementById('carousel-img');
+    imgElement.style.opacity = '0';
+    
+    setTimeout(() => {
+        imgElement.src = data.image;
+        imgElement.alt = data.title;
+        imgElement.style.opacity = '1';
+    }, 300);
+    
+    // Update text content
+    document.getElementById('carousel-title').textContent = data.title;
+    document.getElementById('carousel-description').textContent = data.description;
+    
+    // Update features list
+    const featuresList = document.getElementById('carousel-features');
+    featuresList.innerHTML = data.features.map(feature => `<li>${feature}</li>`).join('');
+    
+    // Update indicators
+    document.querySelectorAll('.indicator').forEach((indicator, i) => {
+        indicator.classList.toggle('active', i === index);
+    });
+    
+    currentSlide = index;
+	}
+        
+        function startAutoPlay() {
+            autoPlayInterval = setInterval(() => {
+                currentSlide = (currentSlide + 1) % carouselData.length;
+                updateCarousel(currentSlide);
+            }, 5000); // Change slide every 5 seconds
+        }
+        
+        function stopAutoPlay() {
+            clearInterval(autoPlayInterval);
+        }
+        
+        // Initialize carousel
+        document.addEventListener('DOMContentLoaded', () => {
+            updateCarousel(0);
+            startAutoPlay();
+            
+            // Add click handlers to indicators
+            document.querySelectorAll('.indicator').forEach((indicator, index) => {
+                indicator.addEventListener('click', () => {
+                    stopAutoPlay();
+                    updateCarousel(index);
+                    startAutoPlay();
+                });
+            });
+            
+            // Pause on hover
+            const carouselContainer = document.querySelector('.carousel-container');
+            carouselContainer.addEventListener('mouseenter', stopAutoPlay);
+            carouselContainer.addEventListener('mouseleave', startAutoPlay);
+        });
+</script>
+
+</body>
+</html>
