@@ -35,7 +35,7 @@
   .close-btn:hover { color: #000; }
 
   h2 { text-align: center; color: #006680; margin-bottom: 20px; }
-  label { display: block; margin-top: 15px; font-weight: 600; }
+  label { display: block; margin-top: 10px; font-weight: 600; }
   input, select { width: 100%; padding: 12px; margin-top: 5px; border-radius: 6px; border: 1px solid #ccc; font-size: 16px; }
   .submit-btn {
     width: 100%;
@@ -59,15 +59,22 @@
   <a href="index.html" class="close-btn">&times;</a>
 
   <h2>Request for Information</h2>
+  <p>Fields marked with * are mandatory!</p>
 
-  <label for="name">Full Name:</label>
+  <label for="name">Full Name*:</label>
   <input type="text" id="name" name="name" placeholder="Your Name" required>
 
-  <label for="email">Email:</label>
+  <label for="email">Email*:</label>
   <input type="email" id="email" name="email" placeholder="you@example.com" required>
+  
+  <label for="phone">Phone Number*:</label>
+  <input type="phone" id="phone" name="phone" placeholder="11111 11111" required>
+  
+  <label for="pref">Contact Preference*:</label>
+  <input type="text" id="pref" name="pref" placeholder="Email:anytime. Phone:M-F:11am-6pm">
 
-  <label for="question">Information requested:</label>
-  <input type="email" id="email" name="email" placeholder="Pleaes mention the information requested" required>
+  <label for="question">Information Requested*:</label>
+  <input type="email" id="email" name="email" placeholder="Please mention the information requested" required>
 
   <button type="button" class="submit-btn" onclick="submitMailto()">Submit</button>
 </form>
@@ -76,6 +83,8 @@
 function submitMailto() {
   const name = encodeURIComponent(document.getElementById('name').value);
   const email = encodeURIComponent(document.getElementById('email').value);
+  const email = encodeURIComponent(document.getElementById('phone').value);
+  const email = encodeURIComponent(document.getElementById('pref').value);
   const question = encodeURIComponent(document.getElementById('question').value);
 
   if(!name || !email || !program){

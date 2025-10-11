@@ -35,7 +35,7 @@
   .close-btn:hover { color: #000; }
 
   h2 { text-align: center; color: #006680; margin-bottom: 20px; }
-  label { display: block; margin-top: 15px; font-weight: 600; }
+  label { display: block; margin-top: 10px; font-weight: 600; }
   input, select { width: 100%; padding: 12px; margin-top: 5px; border-radius: 6px; border: 1px solid #ccc; font-size: 16px; }
   .submit-btn {
     width: 100%;
@@ -59,14 +59,34 @@
   <a href="index.html" class="close-btn">&times;</a>
 
   <h2>AI Skilling Registration</h2>
+  <p>Fields marked with * are mandatory!</p>
 
-  <label for="name">Full Name:</label>
-  <input type="text" id="name" name="name" placeholder="Your Name" required>
+  <label for="sname">Full Name of Student*:</label>
+  <input type="text" id="sname" name="sname" placeholder="This name will appear on the certificate" required>
+  
+  <label for="minor">Is Student Under 18 years?*:</label>
+  <select id="minor" name="minor" required>
+    <option value="">-- Yes/No --</option>
+    <option value="yes">Yes</option>
+    <option value="no">No</option>
+  </select>
+  
+  <label for="parent">Full Name of Parent/Guardian if Student is Under 18 Years:</label>
+  <input type="text" id="pname" name="pname" placeholder="Parent's Full Name">
+  
+  <label for="relation">Parent/Guardian Relationship with Student:</label>
+  <input type="text" id="rname" name="rname" placeholder="Father/Mother/Brother/Sister etc.">
 
-  <label for="email">Email:</label>
+  <label for="email">Email*:</label>
   <input type="email" id="email" name="email" placeholder="you@example.com" required>
+  
+  <label for="phone">Phone Number*:</label>
+  <input type="phone" id="phone" name="phone" placeholder="11111 11111" required>
+  
+  <label for="pref">Class Timing Preference*:</label>
+  <input type="text" id="pref" name="pref" placeholder="Wed,Sat,Sun. 10am,11am,12pm,3pm,4pm" required>
 
-  <label for="program">Select Program:</label>
+  <label for="program">Select Program*:</label>
   <select id="program" name="program" required>
     <option value="">-- Choose a Module --</option>
     <option value="foundation">AI Foundations for Young Innovators (Grades 7-9)</option>
