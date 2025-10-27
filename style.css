@@ -130,16 +130,16 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0;
 /** Home: Section-2: Start **/
 
 .home-rect { max-width: 1140px; width: 100%; border: 2px solid #00b4ff; border-radius: 16px;
-	box-shadow: 0 0 18px rgba(0,180,255,0.6); background: #fff;
-	padding: 20px; margin: 30px auto; font-family: Arial, sans-serif;
-	box-sizing: border-box; overflow-wrap: break-word; word-wrap: break-word;}
+	box-shadow: 0 0 18px rgba(0,180,255,0.6); background: #fff; padding: 20px; margin: 30px auto;
+	font-family: Arial, sans-serif;	box-sizing: border-box; overflow-wrap: break-word;
+	word-wrap: break-word;transition: all 0.3s ease;}
+.home-rect:hover {transform: scale(1.05); background-color: #D3D3D3;}
 
 .home-sec-header { display: flex; align-items: center; gap: 10px; }
 .home-sec-header img { width: 50px; height: 50px }
 .home-sec-header h3 { margin: 0; font-size: 36px; font-weight: 600; }
 
 .home-sec-frame { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; }
-
 .home-sec-frame-r1c1 { flex:1; min-width:300px; }
 .home-sec-frame-r1c1 ul { margin:0; padding-left:80px; color:#333; font-size:15px; line-height:1.6; }
 
