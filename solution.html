@@ -5,201 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>skaisense</title>
 	<link rel="stylesheet" href="style.css">
-	
-	<style>
-
-        /* Hero Section */
-        .hero {background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white; padding: 80px 20px; text-align: center;
-            position: relative; overflow: hidden;}
-        
-        .hero::before {content: ''; position: absolute; top: 0; left: 0;
-            right: 0; bottom: 0; animation: float 20s linear infinite;
-			background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></svg>');}
-        
-        @keyframes float {
-            from { transform: translateY(0); }
-            to { transform: translateY(-100px); } }
-        
-        .hero-content {max-width: 1200px; margin: 0 auto; position: relative; z-index: 1;}
-        
-        .hero h1 {font-size: 3.5rem; margin-bottom: 20px;
-            font-weight: 700; animation: fadeInUp 0.8s ease;}
-        
-        .hero p {font-size: 1.3rem; margin-bottom: 40px; 
-            opacity: 0.95; animation: fadeInUp 0.8s ease 0.2s both;}
-        
-        @keyframes fadeInUp {
-            from {opacity: 0; transform: translateY(30px);}
-            to {opacity: 1; transform: translateY(0);} }
-        
-        .cta-buttons {display: flex; gap: 20px; justify-content: center; 
-            flex-wrap: wrap; animation: fadeInUp 0.8s ease 0.4s both;}
-        
-        .btn { padding: 15px 35px; border: none; border-radius: 50px;
-            font-size: 1.1rem; cursor: pointer; transition: all 0.3s ease;
-            text-decoration: none; display: inline-block; font-weight: 600;}
-        
-        .btn-primary, .btn-secondary {background: white; color: #667eea;}
-        
-        .btn-primary:hover,  .btn-secondary:hover {transform: translateY(-3px); box-shadow: 0 10px 25px rgba(0,0,0,0.2);}
-        
-        .btn-secondary1 {background: transparent; color: white; border: 2px solid white;}
-        
-        .btn-secondary1:hover {background: white; color: #667eea; transform: translateY(-3px);}
-        
-        /* Features Section */
-        .features {padding: 50px 20px 20px 20px; background: #f8f9fa;}
-        
-        .container {max-width: 1200px; margin: 0 auto;}
-        
-        .section-header {text-align: center; margin-bottom: 70px;}
-        
-        .section-header h2 {
-            font-size: 2.5rem;
-            color: #2d3748;
-            margin-bottom: 15px;
-        }
-        
-        .section-header p {
-            font-size: 1.2rem;
-            color: #718096;
-        }
-		
-		.features-grid-1 {display: grid; grid-template-columns: repeat(2, 1fr); 
-			gap: 30px; justify-items: center;}
-		
-        .feature-card {
-            background: white;
-            padding: 40px 30px;
-            border-radius: 15px;
-            text-align: center;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-        }
-        
-        .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
-        }
-        
-        .feature-icon {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 25px;
-            font-size: 2rem;
-        }
-        
-        .feature-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: #2d3748;
-        }
-        
-        .feature-card p {
-            color: #718096;
-            line-height: 1.8;
-        }
-        
-        /* AI Tools Section */
-        .ai-tools {
-            padding: 100px 20px;
-            background: white;
-        }
-        
-        .tools-grid {display: grid; grid-template-columns: repeat(3, 1fr); 
-			gap: 30px; margin-top: 50px;}
-        
-        .tool-badge {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 30px 20px;
-            border-radius: 12px;
-            text-align: center;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-        
-        .tool-badge:hover {
-            transform: scale(1.05);
-            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
-        }
-        
-        .tool-badge h4 {
-            font-size: 1.3rem;
-            margin-bottom: 10px;
-        }
-        
-        .tool-badge p {
-            font-size: 0.9rem;
-            opacity: 0.9;
-        }
-        
-        /* Approach Section */
-        .approach {
-            padding: 100px 20px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-        }
-        
-        .approach-timeline {
-            max-width: 900px;
-            margin: 50px auto 0;
-        }
-        
-        .timeline-item {
-            display: flex;
-            gap: 30px;
-            margin-bottom: 50px;
-            align-items: flex-start;
-        }
-        
-        .timeline-number {
-            min-width: 60px;
-            height: 60px;
-            background: white;
-            color: #667eea;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-        
-        .timeline-content {flex: 1;}
-        
-        .timeline-content h3 {font-size: 1.5rem; margin-bottom: 10px;}
-        
-        .timeline-content p {opacity: 0.9; line-height: 1.8;}
-        
-        /* Experience Section */
-        .experience {padding: 100px 20px; background: #f8f9fa;}
-        
-        .stats-grid {display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 40px; margin-top: 50px;}
-        
-        .stat-card {text-align: center; padding: 30px;}
-        
-        .stat-number {font-size: 3rem; font-weight: bold; 
-			background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 10px;}
-        
-        .stat-label {font-size: 1.1rem; color: #718096;}
-        
-        @media (max-width: 768px) {
-            .hero h1 {font-size: 2.5rem;}
-            .hero p {font-size: 1.1rem;}
-			.features-grid-1, .tools-grid {grid-template-columns: repeat(1, 1fr);}            
-            .section-header h2 {font-size: 2rem;}
-            .cta-buttons {flex-direction: column;}
-        }
-    </style>
 </head>
 <body>
 <div id="root">
@@ -210,7 +15,7 @@
             <div id="logo">
                 <img src="img/logo2-full.svg" alt="Company Logo">
             </div>
-            <div id="social">
+            <div id="login">
                 <span class="login-text">Log In</span>
             </div>
         </div>
@@ -218,100 +23,105 @@
 <!-- *Common: Header: End* -->
 
 <!-- **Common: NavBar: Start** -->
+
     <nav id="navbar">
         <div class="nav-toggle" id="nav-toggle">&#9776;</div>
         <ul id="nav-menu">
             <li><a href="index.html">Home</a></li>
-            <li><a href="learning.html">AI Skilling</a></li>
+            <li><a href="skilling.html">AI Skilling</a></li>
 			<li><a href="talent.html">AI Talent</a></li>
             <li><a href="solution.html">AI Solutions</a></li>
             <li><a href="about.html">About</a></li>
         </ul>
     </nav>
+	
 <!-- *Common: NavBar: End* -->
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>AI Products That Adapt to You</h1>
-            <p>Leveraging cutting-edge Machine Learning, Deep Learning, and LLMs to deliver personalized, robust solutions tailored to your unique needs</p>
-            <div class="cta-buttons">
-                <a href="contact.html" class="btn btn-primary">Get Started</a>
-                <a href="work.html" class="btn btn-secondary">View Our Work</a>
-            </div>
-        </div>
-    </section>
+<!-- **solution: Section-1: Intro: Start** -->
+	<div class="section-container">
+		<div class="section-header">
+			<h2>AI Products That Adapt to You</h2>
+			<p>Leveraging cutting-edge Machine Learning, Deep Learning, and LLM technologies, we design innovative AI products and deliver turnkey solutions tailored to your unique business needs. From concept to deployment, we help organizations integrate AI seamlessly and unlock measurable value.</p>
+		</div>
+	</div>
 
-    <!-- Unique Offerings -->
-    <section class="features">
-        <div class="container">
-            <div class="section-header">
-                <h2>What Makes Us Different</h2>
-                <p>Four pillars that set our AI solutions apart</p>
-            </div>
-            <div class="features-grid-1">
-                <div class="feature-card">
-                    <div class="feature-icon">🎯</div>
-                    <h3>Deep Personalization</h3>
-                    <p>Every AI solution we build learns and adapts to your specific use case, user behavior, and business context. No generic templates—just intelligence that grows with you.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🛡️</div>
-                    <h3>Robust Design</h3>
-                    <p>Built for reliability and scale. Our systems handle edge cases, maintain performance under load, and ensure consistent results in production environments.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">📚</div>
-                    <h3>Skill Repositories</h3>
-                    <p>Access to our extensive library of pre-trained models, proven architectures, and reusable components that accelerate your time-to-market without sacrificing quality.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">⚡</div>
-                    <h3>Agile Innovation</h3>
-                    <p>Rapid iteration cycles and continuous deployment ensure your AI solutions evolve with your business needs and stay ahead of the competition.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- *solution: Section-1: Intro: End* -->
 
-    <!-- AI Tools & Areas of Expertise -->
-    <section class="ai-tools">
-        <div class="container">
-            <div class="section-header">
-                <h2>Our Expertise & Capabilities</h2>
-                <p>Specialized AI solutions across key technologies and domains</p>
-            </div>
-            
-            <h3 style="text-align: center; color: #2d3748; margin: 50px 0 30px; font-size: 1.8rem;">Technologies We Master</h3>
-            <div class="tools-grid">
-                <div class="tool-badge">
-                    <h4>Machine Learning</h4>
-                    <p>Predictive analytics & pattern recognition</p>
-                </div>
-                <div class="tool-badge">
-                    <h4>Deep Learning</h4>
-                    <p>Neural networks for complex problems</p>
-                </div>
-                <div class="tool-badge">
-                    <h4>Large Language Models</h4>
-                    <p>Natural language understanding & generation</p>
-                </div>
-                <div class="tool-badge">
-                    <h4>Computer Vision</h4>
-                    <p>Image & video analysis solutions</p>
-                </div>
-                <div class="tool-badge">
-                    <h4>Reinforcement Learning</h4>
-                    <p>Adaptive decision-making systems</p>
-                </div>
-                <div class="tool-badge">
-                    <h4>Generative AI</h4>
-                    <p>Content creation & synthesis</p>
-                </div>
-            </div>
+<!--**solution: Section-2: What Makes Us Different: Start**-->
+
+	<div class="section-container">
+		<div class="section-header">
+			<h2>What Makes Us Different</h2>
+			<p>Four pillars that set our AI solutions apart</p><br>
+		</div>
+		<div class="section-2c-grid">
+			<div class="feature-card">
+				<div class="feature-icon">🎯</div>
+				<h3>Deep Personalization</h3>
+				<p>Every AI solution we build learns and adapts to your specific use case, user behavior, and business context. No generic templates—just intelligence that grows with you.</p>
+			</div>
+			<div class="feature-card">
+				<div class="feature-icon">🛡️</div>
+				<h3>Robust Design</h3>
+				<p>Built for reliability and scale. Our systems handle edge cases, maintain performance under load, and ensure consistent results in production environments.</p>
+			</div>
+			<div class="feature-card">
+				<div class="feature-icon">📚</div>
+				<h3>Skill Repositories</h3>
+				<p>Access to our extensive library of pre-trained models, proven architectures, and reusable components that accelerate your time-to-market without sacrificing quality.</p>
+			</div>
+			<div class="feature-card">
+				<div class="feature-icon">⚡</div>
+				<h3>Agile Innovation</h3>
+				<p>Rapid iteration cycles and continuous deployment ensure your AI solutions evolve with your business needs and stay ahead of the competition.</p>
+			</div>
+		</div>
+	</div>
+<!--*solution: Section-2: What Makes Us Different: End*-->
+
+<!--**solution: Section-3: Technologies We Master: Start**-->
+
+	<div class="section-container">
+		<div class="section-header">
+			<h2>Technologies We Master</h2>
+			<p>Specialized AI solutions across key technologies and domains</p>
+		</div>
+		<div class="section-3c-grid">
+			<div class="tool-badge">
+				<h4>Machine Learning</h4>
+				<p>Predictive analytics & pattern recognition</p>
+			</div>
+			<div class="tool-badge">
+				<h4>Deep Learning</h4>
+				<p>Neural networks for complex problems</p>
+			</div>
+			<div class="tool-badge">
+				<h4>Large Language Models</h4>
+				<p>Natural language understanding & generation</p>
+			</div>
+			<div class="tool-badge">
+				<h4>Computer Vision</h4>
+				<p>Image & video analysis solutions</p>
+			</div>
+			<div class="tool-badge">
+				<h4>Reinforcement Learning</h4>
+				<p>Adaptive decision-making systems</p>
+			</div>
+			<div class="tool-badge">
+				<h4>Generative AI</h4>
+				<p>Content creation & synthesis</p>
+			</div>
+		</div>
+	</div>
+	
+<!--*solution: Section-3: Technologies We Master: End*-->
+
+<!--**solution: Section-4: Application Areas: Start**-->
+
+        <div class="section-container">
 
             <h3 style="text-align: center; color: #2d3748; margin: 70px 0 30px; font-size: 1.8rem;">Application Areas</h3>
-            <div class="features-grid-1">
+            <div class="section-2c-grid">
                 <div class="feature-card">
                     <div class="feature-icon">💬</div>
                     <h3>NLP Solutions</h3>
@@ -344,14 +154,16 @@
                 </div>
             </div>
         </div>
-    </section>
+		
+<!--* solution: Section-4: Application Areas: End *-->
 
-    <!-- Our Approach -->
+<!--** solution: Section-5: Application Areas: Start **-->
+
     <section class="approach">
-        <div class="container">
+        <div class="section-container">
             <div class="section-header">
-                <h2>Our Approach</h2>
-                <p><span style="color:black">A proven methodology that delivers results</span></p>
+                <h2 style="color:white">Our Approach</h2>
+                <p><span style="color:white">A proven methodology that delivers results</span></p>
             </div>
             <div class="approach-timeline">
                 <div class="timeline-item">
@@ -386,9 +198,11 @@
         </div>
     </section>
 
+<!--* solution: Section-5: Application Areas: End *-->
+
     <!-- Experience Section -->
     <section class="experience">
-        <div class="container">
+        <div class="section-container">
             <div class="section-header">
                 <h2>World-Class Team Expertise</h2>
                 <p>Veteran AI practitioners bringing deep industry experience</p>
@@ -454,7 +268,7 @@
             <div class="footer-links">
                 <h4>Quick Links</h4>
 				<p><a href="index.html">Home</a> &nbsp; <a href="about.html">About</a></p>
-				<p><a href="learning.html">AI Skilling</a></p>
+				<p><a href="skilling.html">AI Skilling</a></p>
 				<p><a href="talent.html">AI Talent</a></p>
 				<p><a href="solution.html">AI Solutions</a></p>
             </div>
@@ -479,7 +293,6 @@
 	<div class="footer-bottom" style="font-weight: normal;">
 		<p>© 2025 Skaisense AI Labs Pvt Ltd. All rights reserved.</p>
 	</div>
-	
 <!-- *Common: Footer: End* -->
 
 </div>

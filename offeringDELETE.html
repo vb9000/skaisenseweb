@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>skaisense AI Products</title>
+	<link rel="stylesheet" href="style.css">
+    <style>
+		.container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 0px;
+        }
+		        
+        /* Hero Section */
+        .hero {
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(247,250,252,0.9) 100%);
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><radialGradient id="a" cx="50%" cy="50%"><stop offset="0%" stop-color="%234f46e5" stop-opacity="0.05"/><stop offset="100%" stop-color="%234f46e5" stop-opacity="0"/></radialGradient></defs><circle cx="200" cy="200" r="100" fill="url(%23a)"/><circle cx="800" cy="300" r="150" fill="url(%23a)"/><circle cx="400" cy="700" r="120" fill="url(%23a)"/></svg>') no-repeat center center;
+            background-size: cover;
+            animation: float 20s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+        
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 2rem;   /* horizontal spacing */
+			row-gap: 2rem;      /* vertical spacing */
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-text h1 {
+            font-size: 2.3rem;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            background: linear-gradient(45deg, #4f46e5, #7c3aed, #3182ce);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        
+        @keyframes glow {
+            from { filter: drop-shadow(0 0 10px rgba(79,70,229,0.2)); }
+            to { filter: drop-shadow(0 0 20px rgba(124,58,237,0.3)); }
+        }
+        
+        .hero-text p {
+            font-size: 1rem;
+            color: #4a5568;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+        
+        .btn {
+            padding: .3rem .7rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(45deg, #4f46e5, #7c3aed);
+            color: white;
+            box-shadow: 0 10px 30px rgba(79,70,229,0.3);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 40px rgba(79,70,229,0.4);
+        }
+        
+        .btn-secondary {
+            background: rgba(79,70,229,0.1);
+            color: #4f46e5;
+            border: 2px solid rgba(79,70,229,0.3);
+            backdrop-filter: blur(10px);
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(79,70,229,0.2);
+            transform: translateY(-3px);
+            color: #4f46e5;
+        }
+        
+        .hero-visual {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .ai-nodes {
+            width: 300px;
+            height: 300px;
+            position: relative;
+            animation: rotate 30s linear infinite;
+        }
+        
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        .node {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(45deg, #4f46e5, #7c3aed);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 14px;
+            box-shadow: 0 10px 30px rgba(79,70,229,0.3);
+            animation: pulse 2s ease-in-out infinite alternate;
+        }
+        
+        @keyframes pulse {
+            from { transform: scale(1); }
+            to { transform: scale(1.1); }
+        }
+        
+        .node:nth-child(1) { top: 0; left: 50%; transform: translateX(-50%); }
+        .node:nth-child(2) { top: 25%; right: 0; }
+        .node:nth-child(3) { bottom: 25%; right: 0; }
+        .node:nth-child(4) { bottom: 0; left: 50%; transform: translateX(-50%); }
+        .node:nth-child(5) { bottom: 25%; left: 0; }
+        .node:nth-child(6) { top: 25%; left: 0; }
+        
+        /* Features Section */
+        .features {
+            padding: 6rem 0;
+            background: linear-gradient(180deg, rgba(255,255,255,0.95) 0%, rgba(247,250,252,0.9) 100%);
+            position: relative;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .section-header h2 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #4f46e5, #7c3aed);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .section-header p {
+            font-size: 1.2rem;
+            color: #4a5568;
+            opacity: 0.8;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        
+        .feature-card {
+            background: rgba(255,255,255,0.8);
+            border: 1px solid rgba(79,70,229,0.1);
+            border-radius: 20px;
+            padding: 2.5rem;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+        
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(45deg, #4f46e5, #7c3aed, #3182ce);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255,255,255,0.95);
+            box-shadow: 0 20px 40px rgba(79,70,229,0.15);
+        }
+        
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(45deg, #4f46e5, #7c3aed);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 24px;
+            color: white;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 1rem;
+        }
+        
+        .feature-card p {
+            color: #4a5568;
+            opacity: 0.9;
+            line-height: 1.7;
+        }
+        
+        /* Approach Section */
+        .approach {
+            padding: 6rem 0;
+            background: rgba(247,250,252,0.95);
+        }
+        
+        .approach-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .approach-text h2 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 2rem;
+            background: linear-gradient(45deg, #4f46e5, #7c3aed);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .tech-stack {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .tech-item {
+            background: rgba(255,255,255,0.8);
+            border: 1px solid rgba(79,70,229,0.1);
+            border-radius: 15px;
+            padding: 1.5rem;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .tech-item:hover {
+            background: rgba(255,255,255,0.95);
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(79,70,229,0.1);
+        }
+        
+        .tech-item h4 {
+            color: #4f46e5;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .tech-item p {
+            color: #4a5568;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 6rem 0;
+            background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #f472b6 100%);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: float 20s ease-in-out infinite;
+        }
+        
+        .cta-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .cta-content h2 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 1rem;
+        }
+        
+        .cta-content p {
+            font-size: 1.3rem;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 2.5rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-buttons-section {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn-white {
+            background: white;
+            color: #4f46e5;
+            border: none;
+            padding: 1.2rem 2.5rem;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .btn-white:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 2rem 0;
+                min-height: auto;
+            }
+            
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+                text-align: center;
+                padding: 2rem 0;
+            }
+            
+            .hero-text h1 {
+                font-size: 2.2rem;
+                line-height: 1.2;
+                margin-bottom: 1rem;
+            }
+            
+            .hero-text p {
+                font-size: 1.1rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            .approach-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            
+            .cta-buttons,
+            .cta-buttons-section {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 280px;
+                padding: 0.9rem 1.5rem;
+                font-size: 1rem;
+            }
+            
+            .features {
+                padding: 4rem 0;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .feature-card {
+                padding: 2rem;
+            }
+            
+            .section-header h2 {
+                font-size: 2.2rem;
+            }
+            
+            .section-header p {
+                font-size: 1.1rem;
+            }
+            
+            .ai-nodes {
+                width: 280px;
+                height: 280px;
+            }
+            
+            .node {
+                width: 50px;
+                height: 50px;
+                font-size: 12px;
+            }
+            
+            .approach {
+                padding: 4rem 0;
+            }
+            
+            .approach-text h2 {
+                font-size: 2.2rem;
+            }
+            
+            .tech-stack {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .cta-section {
+                padding: 4rem 0;
+            }
+            
+            .cta-content h2 {
+                font-size: 2.2rem;
+                margin-bottom: 1rem;
+            }
+            
+            .cta-content p {
+                font-size: 1.1rem;
+                margin-bottom: 2rem;
+            }
+            
+            .container {
+                padding: 0 1rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero-text h1 {
+                font-size: 1.8rem;
+            }
+            
+            .hero-text p {
+                font-size: 1rem;
+            }
+            
+            .section-header h2 {
+                font-size: 1.8rem;
+            }
+            
+            .approach-text h2 {
+                font-size: 1.8rem;
+            }
+            
+            .cta-content h2 {
+                font-size: 1.8rem;
+            }
+            
+            .feature-card {
+                padding: 1.5rem;
+            }
+            
+            .ai-nodes {
+                width: 240px;
+                height: 240px;
+            }
+            
+            .node {
+                width: 40px;
+                height: 40px;
+                font-size: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div id="root">
+
+<!-- **Common: Header: Start** -->
+    <header id="header">
+        <div class="header-container">
+            <div id="logo">
+                <img src="img/logo2-full.svg" alt="Company Logo">
+            </div>
+            <div id="social">
+                <span class="login-text">Log In</span>
+                <a href="#" aria-label="Facebook">
+                    <img src="img/iconfacebook.svg" alt="Facebook">
+                </a>
+                <a href="#" aria-label="Twitter">
+                    <img src="img/icontweeter.svg" alt="Twitter">
+                </a>
+            </div>
+        </div>
+    </header>
+<!-- *Common: Header: End* -->
+
+<!-- **Common: NavBar: Start** -->
+    <nav id="navbar">
+        <div class="nav-toggle" id="nav-toggle">&#9776;</div>
+        <ul id="nav-menu">
+            <li><a href="index.html">Home</a></li>
+			<li><a href="offering.html">Our Offerings</a></li>
+            <li><a href="learning.html">AI Learning</a></li>
+			<li><a href="talent.html">AI Talent</a></li>
+            <li><a href="solution.html">AI Solutions</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </nav>
+<!-- *Common: NavBar: End* -->
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Transforming Futures with Personalized AI Intelligence</h1>
+                    <p>Empowering young minds and professionals through cutting-edge AI skilling, innovative products, and intelligent staffing solutions tailored to your unique journey.</p>
+                    <div class="cta-buttons">
+                        <a href="#" class="btn btn-primary">Start Your AI Journey</a>
+                        <a href="#" class="btn btn-secondary">Explore Solutions</a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="ai-nodes">
+                        <div class="node">ML</div>
+                        <div class="node">DL</div>
+                        <div class="node">LLM</div>
+                        <div class="node">AI</div>
+                        <div class="node">NLP</div>
+                        <div class="node">CV</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Choose SKAISENSE AI LABS</h2>
+                <p>Experience the power of personalized AI learning with our comprehensive ecosystem of tools, expertise, and innovative solutions.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Personalized Learning Paths</h3>
+                    <p>Our AI-driven platform analyzes your skills, goals, and learning style to create customized curricula that adapt as you grow, ensuring optimal learning outcomes for every individual.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🏗️</div>
+                    <h3>Robust Design Framework</h3>
+                    <p>Built on enterprise-grade architecture with scalable solutions that grow with your needs. Our robust design ensures reliability, security, and performance at every level.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📚</div>
+                    <h3>Comprehensive Skill Repository</h3>
+                    <p>Access our vast library of AI skills covering ML, DL, LLM, Computer Vision, NLP, and emerging technologies. From fundamentals to advanced applications, we've got you covered.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Industry-Leading Experience</h3>
+                    <p>Leverage our team's extensive experience in deploying real-world AI solutions across industries. Learn from practitioners who've solved complex challenges.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎪</div>
+                    <h3>Multi-Domain Expertise</h3>
+                    <p>Spanning healthcare, finance, education, retail, and more - our cross-industry experience ensures relevant and applicable AI knowledge for your domain.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🚀</div>
+                    <h3>Innovative AI Products</h3>
+                    <p>From intelligent automation tools to custom AI solutions, we develop cutting-edge products that solve real business challenges and drive innovation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Approach Section -->
+    <section class="approach">
+        <div class="container">
+            <div class="approach-content">
+                <div class="approach-text">
+                    <h2>Our AI-Powered Approach</h2>
+                    <p style="color: #4a5568; font-size: 1.2rem; margin-bottom: 2rem;">We leverage cutting-edge AI technologies to deliver transformative learning experiences and innovative solutions that prepare you for the future of work.</p>
+                    <div class="tech-stack">
+                        <div class="tech-item">
+                            <h4>Machine Learning</h4>
+                            <p>Advanced algorithms for predictive analytics and intelligent automation</p>
+                        </div>
+                        <div class="tech-item">
+                            <h4>Deep Learning</h4>
+                            <p>Neural networks for complex pattern recognition and decision making</p>
+                        </div>
+                        <div class="tech-item">
+                            <h4>Large Language Models</h4>
+                            <p>GPT-based solutions for natural language understanding and generation</p>
+                        </div>
+                        <div class="tech-item">
+                            <h4>Computer Vision</h4>
+                            <p>Image and video processing for visual intelligence applications</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="ai-nodes" style="animation-direction: reverse;">
+                        <div class="node">🧠</div>
+                        <div class="node">👁️</div>
+                        <div class="node">💬</div>
+                        <div class="node">📊</div>
+                        <div class="node">🔮</div>
+                        <div class="node">⚡</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Transform Your AI Journey?</h2>
+                <p>Join thousands of students and professionals who are already building their future with SKAISENSE AI LABS. Whether you're looking to upskill, hire AI talent, or develop custom solutions, we're here to help.</p>
+                <div class="cta-buttons-section">
+                    <button class="btn-white">Get Started Today</button>
+                    <button class="btn-white">Contact Our Experts</button>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+</body>
+</html>
