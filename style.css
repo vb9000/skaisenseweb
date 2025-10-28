@@ -253,6 +253,12 @@ footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0;
 	
 /* Solution: End */
 
+/* About: Start */
+
+.about-section-2-grid-item { background-color: #fff; border: 2px solid #00b4ff; border-radius: 12px;
+	box-shadow: 0 0 12px rgba(0,180,255,0.4); padding: 10px; text-align: center; 
+	font-family: Arial, sans-serif;}
+
 /* Mobile Responsive */
 
 @media (max-width: 768px) {
