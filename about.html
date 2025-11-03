@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>skaisense</title>
-	<link rel="stylesheet" href="style.css">
+	<script type="text/javascript" src="zjava.js"></script>
+	<link rel="stylesheet" href="zstyle.css">
 </head>
 <body>
 <div id="root">
@@ -15,7 +16,7 @@
             <div id="logo">
                 <img src="img/logo2-full.svg" alt="Company Logo">
             </div>
-            <div id="social">
+            <div id="login">
                 <span class="login-text">Log In</span>
             </div>
         </div>
@@ -23,16 +24,18 @@
 <!-- *Common: Header: End* -->
 
 <!-- **Common: NavBar: Start** -->
+
     <nav id="navbar">
         <div class="nav-toggle" id="nav-toggle">&#9776;</div>
         <ul id="nav-menu">
             <li><a href="index.html">Home</a></li>
-            <li><a href="learning.html">AI Skilling</a></li>
+            <li><a href="skilling.html">AI Skilling</a></li>
 			<li><a href="talent.html">AI Talent</a></li>
             <li><a href="solution.html">AI Solutions</a></li>
             <li><a href="about.html">About</a></li>
         </ul>
     </nav>
+	
 <!-- *Common: NavBar: End* -->
 
 <!-- **About: Main: Start** -->
@@ -130,7 +133,7 @@
                 <p><em>build AI.</em></p>
                 <p><em>shape tomorrow.</em></p>
                 <p>
-					<span style="color:red; font-style: italic;">learn.</span>
+					<span style="color:orange; font-style: italic;">learn.</span>
 					<span style="color:yellow; font-style: italic;">build.</span>
 					<span style="color:#51cf66; font-style: italic;">lead.</span>
 				</p>
@@ -165,28 +168,7 @@
 		<p>© 2025 Skaisense AI Labs Pvt Ltd. All rights reserved.</p>
 	</div>
 <!-- *Common: Footer: End* -->
+
 </div>
-
-<!-- JavaScript -->
-
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-    const toggle = document.getElementById('nav-toggle');
-    const menu = document.getElementById('nav-menu');
-
-    // Toggle menu when hamburger is clicked
-    toggle.addEventListener('click', function () {
-        menu.classList.toggle('show');
-    });
-
-    // Optional: close menu when a link is clicked (good for mobile)
-    document.querySelectorAll('#nav-menu a').forEach(link => {
-        link.addEventListener('click', () => {
-            menu.classList.remove('show'); // hide menu
-        });
-    });
-});
-</script>
-
 </body>
 </html>
